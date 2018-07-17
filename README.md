@@ -5,6 +5,8 @@
 Las ventajas es que se evita el famoso "funciona en mi pc"; consume menos recursos; además de permitir tener N servidores.
 
 # Cómo se instala
+## Por ejemplo en ubuntu 
+
 ir a la web de [docker ce -- community edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce "Title")
 
 1. __preparo el repo para poderlo descargar__
@@ -41,8 +43,8 @@ docker version mostrará la ip que usaremos.
 	- Plantilla solo lectura usada para crear contenedores
 	- Son creadas con __docker build__ ya sea por nosotros o por otros usuarios de Docker
 	- son creadas también a partir del comando __docker commit__  mientras se esté trabajando con un contenedor de modo interactivo
-	- Se componen de otras imágenes (puedo combinar nginx con ubuntu para php, etc.)
-	- Se almacenan en un registry de docker.
+	- Se componen de otras imágenes (puedo trabajar con imagenes pre existentes, por ejemplo ubuntu, debian, nginx)
+	- Se almacenan en un docker registry.
 	
 2. **Contenedores:**
 	- Son la instancia de una clase, nace a partir de una imagen
@@ -51,8 +53,10 @@ docker version mostrará la ip que usaremos.
 	
 3. **Registries y repositorios:**
 	- Es donde se almacenan las imágenes de docker.
-	- Existen registries privados o podemos usar el público de Docker llamado Docker Hub.
+	- Existen registries privados y publicos,  podemos usar el público de Docker llamado Docker Hub o pagar su servicio privado, tambien existen distintos productos que brindan solución de registries.
+
 	- Dentro del registry se almacenan las imágenes y los repos.
+
 	- Un repo de docker es una colección de diferentes imágenes con el mismo nombre pero con diferente tag, cada una de estas representando la versión de la imagen. 
 	
 ####Se recomienda usar las imágenes oficiales, ya que están documentadas, tienen equipos dedicados a revisar el contenido de las imágenes oficiales para de esa manera realizar actualizaciones de seguridad cuando sea necesario. 
@@ -119,6 +123,7 @@ Puedo usar cualquier puerto que desee, también puedo hacer docker inspect y acc
 > nano index.html
 
 Para enviarle contenido a nginx creo un **volumen**, nos permitirá compartir un directorio desde nuestro host a nuestro contenedor. 
+
 >  docker run --rm --name nginx -d -p 8080:80 -v $(pwd)/nginx/html:/usr/share/nginx/html nginx
 
 *siempre desde el directorio raíz*
@@ -129,9 +134,13 @@ Desde docker logs veo qué sucede con el contenedor.
 
 > docker logs nginx
 
-Con el parámetro -f veo qué sucede en cada momento
+Con el parámetro -f (follow) veo qué sucede en cada momento
 
 > docker logs -f nginx
+
+Con el paramentro --tail ´numero´, muestra la cantidad de lineas de logs especificadas.
+
+> docker logs --tail 100 nginx 
 
 
 
