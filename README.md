@@ -92,7 +92,9 @@ Puedo ver los contenedores con status up
 Con este comando veo todos los contenedores, up o down	
 > docker ps -a 
 
-Para el container
+## Podra ver que devuelve siete columnas, cada columna nos devuelve información de los container corriendo 
+
+Parar el container
 
 > docker stop alpine 
 
@@ -133,7 +135,10 @@ Puedo usar cualquier puerto que desee, también puedo hacer docker inspect y acc
 
 > docker inspect nginx  >> 172.17.0.3
 
+## Persistencia 
+
 #### Previamente genero una carpeta para alojar index.html
+
 > mkdir nginx/html
 
 > nano index.html
