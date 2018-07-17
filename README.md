@@ -1,10 +1,10 @@
-#Que es docker
+# Que es docker
 
-###Es una tecnología de virtualización basada en contenedores
+### Es una tecnología de virtualización basada en contenedores
 
 Las ventajas es que se evita el famoso "funciona en mi pc"; consume menos recursos; además de permitir tener N servidores.
 
-#Cómo se instala
+# Cómo se instala
 ir a la web de [docker ce -- community edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce "Title")
 
 1. __preparo el repo para poderlo descargar__
@@ -28,13 +28,13 @@ ir a la web de [docker ce -- community edition](https://docs.docker.com/install/
 	__cierro sesión y vuelvo a iniciar__
 	verifico nuevamente con docker version
 		
-###Instalación en equipos legacy (mac o windows) 
+### Instalación en equipos legacy (mac o windows) 
 [docker toolbox](https://docs.docker.com/toolbox/overview/ "Title")
 en mac no usar iterm, sino terminal
 docker version mostrará la ip que usaremos.
 
-#Conceptos importantes
-###Terminología
+# Conceptos importantes
+### Terminología
 
 
 1. **Imágenes:** 
@@ -77,7 +77,7 @@ docker version mostrará la ip que usaremos.
 	 
 	- Si creo otro contenedor no existirá lo creado anteriormente, porque cada contenedor es independiente de los demás, están aislados.
 	
-###Contenedores en profundidad
+### Contenedores en profundidad
 -d --detach crea el contenedor en el background, al crearlo me mostrará el id del contendor.
 	
 > docker run -d alpine sleep 1000
@@ -100,9 +100,9 @@ Puedo ver los contenedores que estén up o down
 Puedo ver información de bajo nivel, por ejemplo la IP, configuración del servidor, etc.
 > docker inspect Alpine
 	
-##Mapeo de Puertos
+## Mapeo de Puertos
 
-###Vamos usar un servidor web con nginx y su puerto 80 
+### Vamos usar un servidor web con nginx y su puerto 80 
 > docker run --rm --name nginx -d -p 8080:80 nginx
 
 Ejecuto docker ps para verificar que se esté ejecutando en el servidor
@@ -113,7 +113,7 @@ Puedo usar cualquier puerto que desee, también puedo hacer docker inspect y acc
 
 > docker inspect nginx  >> 172.17.0.3
 
-####Previamente genero una carpeta para alojar index.html
+#### Previamente genero una carpeta para alojar index.html
 > mkdir nginx/html
 
 > nano index.html
