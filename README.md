@@ -92,6 +92,14 @@ Puedo ver los contenedores con status up
 Con este comando veo todos los contenedores, up o down	
 > docker ps -a 
 
+Para el container
+
+> docker stop alpine 
+
+Eliminar el container 
+
+> docker rm alpine 
+
 Con este comando creo un contenedor que se dormirá por 1 segundo y se eliminará luego de terminada su ejecución	
 > docker run --rm alpine sleep 1
 	
@@ -100,6 +108,14 @@ Puedo especificar el nombre del contenedor, sino docker le pone uno random
 	
 Puedo ver los contenedores que estén up o down
 > docker ps -a
+
+Listar las imagenes 
+
+> docker images
+
+Eliminar la imagen 
+
+> docker rmi alpine 
 
 Puedo ver información de bajo nivel, por ejemplo la IP, configuración del servidor, etc.
 > docker inspect Alpine
