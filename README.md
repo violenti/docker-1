@@ -164,8 +164,18 @@ Con el paramentro --tail ´numero´, muestra la cantidad de lineas de logs espec
 > docker logs --tail 100 nginx 
 
 
+### Monitorear nuestro container 
 
-	 
+> docker stats alpine 
+
+Nos brinda información de CPU, memoria, networking, disco.
+
+### Limitar recursos de nuestro container
+
+Limite por memoria
+
+> docker run -m 100M -d -it --name arturito  alpine 
+
 	
 	
 
