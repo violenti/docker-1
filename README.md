@@ -5,6 +5,11 @@
 Las ventajas es que se evita el famoso "funciona en mi pc"; consume menos recursos; además de permitir tener N servidores.
 
 # Cómo se instala
+
+Pueden descargar el script  https://get.docker.com/ 
+
+Tambien de forma manual por repositorio
+
 ## Por ejemplo en ubuntu 
 
 ir a la web de [docker ce -- community edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce "Title")
@@ -180,8 +185,22 @@ Limite CPU
 
 > docker run --cpus 0.5 -d -it --name arturito  alpine 
 
+Va
 
-	
-	
+### Variable de entorno
+
+Podemos definir nuevas variables de entorno cuando ejecutamos el container. 
+
+Casos de uso:
+
+* Pasar un valor de una variable 
+
+* Pasar el valor de un token, usario o password
+
+* Editar un host seteado en una variable 
+
+Se puede pasar infinitas variables de entorno, siempre hay que definirlas con un -e 
+
+docker run -m 100MB -e gato=perro -d -it --name arturito  alpine
 
 
