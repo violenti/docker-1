@@ -176,6 +176,11 @@ Limite por memoria
 
 > docker run -m 100M -d -it --name arturito  alpine 
 
+Limite CPU
+
+> docker run --cpus 0.5 -d -it --name arturito  alpine 
+
+
 	
 	
 
